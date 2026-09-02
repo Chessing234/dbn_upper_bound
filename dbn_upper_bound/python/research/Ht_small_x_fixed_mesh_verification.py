@@ -31,6 +31,7 @@ def power(a,x): return mp.power(a,x);
 def gamma(z): return mp.gamma(z);
 def cos(z): return mp.cos(z);
 def sin(z): return mp.sin(z);
+def atan(z): return mp.atan(z);
 def conj(a): return a.conjugate();
 def sum(n,N,summand): return mp.nsum(summand,[n,N]);
 def intnum(u_lowlim,u_uplim,integrand): return mp.quad(integrand,[u_lowlim,u_uplim]);
@@ -59,7 +60,7 @@ def ddx_Ht_bound_optim(x,y=0.4,t=0.4,n0=50,X=6):
    th = thetafunc_new(x,y);
    n0 = max(1,floor(sqrt(x/Pi)));
    a1 = 9-y; a2 = 9+y; a3 = 5-y; a4 = 5+y; 
-   pi_fac1 = 2*(Pi^2); pi_fac2 = 3*Pi;
+   pi_fac1 = 2*(Pi**2); pi_fac2 = 3*Pi;
    main_est = (1/2)*exp(-t*th**2)*intnum(0,X,lambda u: sum(1,n0,lambda n: sqrt(th**2+u**2)*exp(t*u**2 - (Pi*n**2)*exp(4*u)*cos(4*th))*(pi_fac1*(n**4)*(exp(a1*u)+exp(a2*u))+pi_fac2*(n**2)*(exp(a3*u)+exp(a4*u)))))
    return(main_est);   
 

@@ -11,7 +11,7 @@ class TestRiemannZetaMethods(unittest.TestCase):
     def test_rsz_plain(self):
         print("Testing test_rsz_plain")
         self.assertEqual(RSZ_plain(7),
-                         mpm.ctx_mp_python.mpf('-1.864646804060364152877136431647678106608335283311309510218784337516'))
+                         mpm.mpf('-1.864646804060364152877136431647678106608335283311309510218784337516'))
         self.assertEqual(RSZ_plain(70),
                          mpm.ctx_mp_python.mpf('0.7449143203472381607992454269461905832009655243043250990620264020776'))
         self.assertEqual(RSZ_plain(500),
